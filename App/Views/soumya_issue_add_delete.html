@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="script.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    <div>
+        <table border=1>
+            <tr ng-repeat="car in cars">
+                <td>{{car}}</td>
+                <td>
+                    <button ng-click="showCurrentItem(car)">>></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <table border=1>
+            <tr>
+                <td>{{header}}</td>
+                <td>
+                    <!-- <select ng-model="ddlValue" ng-change="getDLLValue(ddlValue)"> -->
+                    <!-- <select ng-model="ddlValue">
+                        <option ng-options="opt in options">{{opt}}</option>
+                    </select> -->
+
+                    <select ng-model="ctrl.selectedStores" ng-options="opt for opt in options" ng-init="options[0]">
+                        {{opt}}
+                    </select> 
+                </td>
+                <td>
+                    <button ng-click=addItems()>ADD</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <!-- <table border=1>
+            <tr ng-repeat="car in cars">
+                
+            </tr>
+        </table> -->
+    </div>
+    
+</div>
+
+</body>
+</html>
